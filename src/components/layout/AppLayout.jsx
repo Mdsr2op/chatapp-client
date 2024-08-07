@@ -16,7 +16,7 @@ const AppLayout = () => (WrappedComponent) => {
             md={3}
             height={"100%"}
             sx={{
-              display: { xs: "none", sm: block },
+              display: { xs: "none", sm: "block" },
             }}
           >
             First
@@ -36,7 +36,7 @@ const AppLayout = () => (WrappedComponent) => {
             md={3}
             height={"100%"}
             sx={{
-              display: { xs: "none", md: block },
+              display: { xs: "none", md: "block" },
               padding: "2rem",
               bgcolor: "rgba(0,0,0,0.1)",
             }}
