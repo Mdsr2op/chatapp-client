@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import {
   Box,
   AppBar,
