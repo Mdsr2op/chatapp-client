@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../shared/Header";
 import Title from "../shared/Title";
 import { Grid } from "@mui/material";
+import ChatList from "../specifics/ChatList";
 
 const AppLayout = () => (WrappedComponent) => {
   return (props) => {
@@ -19,7 +20,7 @@ const AppLayout = () => (WrappedComponent) => {
               display: { xs: "none", sm: "block" },
             }}
           >
-            First
+            <ChatList chats={["a","ab","abc"]}/>
           </Grid>
           <Grid
             item

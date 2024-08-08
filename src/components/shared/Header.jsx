@@ -20,9 +20,9 @@ import {
 import { useNavigate } from "react-router-dom";
 
 
-const SearchDialog = lazy(() => import("../dialogs/Search"))
-const NewGroupDialog = lazy(() => import("../dialogs/NewGroup"))
-const NotificationsDialogue = lazy(() => import("../dialogs/Notifications"))
+const SearchDialog = lazy(() => import("../specifics/Search"))
+const NewGroupDialog = lazy(() => import("../specifics/NewGroup"))
+const NotificationsDialogue = lazy(() => import("../specifics/Notifications"))
 
 const Header = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
