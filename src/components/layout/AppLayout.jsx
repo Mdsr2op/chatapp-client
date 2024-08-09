@@ -3,7 +3,7 @@ import Header from "../shared/Header";
 import Title from "../shared/Title";
 import { Grid } from "@mui/material";
 import ChatList from "../specifics/ChatList";
-import { sampleChats } from "../shared/constants/sampleData";
+import { sampleChats } from "../constants/sampleData";
 import { useParams } from "react-router-dom";
 
 const AppLayout = () => (WrappedComponent) => {

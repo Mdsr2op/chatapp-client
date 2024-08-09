@@ -17,7 +17,7 @@ const ChatList = ({
     <Stack width={w} direction={"column"}>
       {chats.map((data, index) => {
         const { avatar, name, _id, groupChat, members } = data;
-
+        
         const newMessageAlert = newMessagesAlerts.find(
           ({ chatId }) => chatId === _id
         );
