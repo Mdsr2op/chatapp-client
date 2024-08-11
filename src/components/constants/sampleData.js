@@ -7,7 +7,7 @@ export const sampleChats = [
     members: ["1", "2"],
   },
   {
-    avatar: ["https://www.w3schools.com/howto/img_avatar.png" ],
+    avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
     name: "Mdsr",
     _id: "2",
     groupChat: true,
@@ -22,8 +22,25 @@ export const sampleUsers = [
     _id: "1",
   },
   {
-    avatar: ["https://www.w3schools.com/howto/img_avatar.png" ],
+    avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
     name: "Mdsr",
     _id: "2",
   },
-]
+];
+
+export const sampleNotifications = [
+  {
+    sender: {
+      avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+      name: "John Doe",
+    },
+    _id: "1",
+  },
+  {
+    sender: {
+      avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+      name: "Mdsr",
+    },
+    _id: "2",
+  },
+];
