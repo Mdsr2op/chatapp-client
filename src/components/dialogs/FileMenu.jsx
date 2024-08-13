@@ -6,7 +6,7 @@ const FileMenu = ({ anchorE1 }) => {
     <Menu anchorEl={anchorE1}>
       <div
       style={{
-        width: "10%rem"
+        width: "10rem"
       }}>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
         corrupti, inventore consequatur vitae nihil quae neque fugit temporibus
