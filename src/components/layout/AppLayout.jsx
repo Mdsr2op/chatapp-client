@@ -43,7 +43,6 @@ const AppLayout = () => (WrappedComponent) => {
             sm={8}
             md={6}
             height={"100%"}
-            bgcolor={"primary.main"}
           >
             <WrappedComponent {...props} />
           </Grid>
