@@ -58,6 +58,7 @@ const Chat = () => {
           </IconButton>
         </Stack>
       </form>
+      <FileMenu />
     </>
   );
 };
