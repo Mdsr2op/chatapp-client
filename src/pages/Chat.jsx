@@ -33,7 +33,7 @@ const Chat = () => {
         }}
       >
         {sampleMessages.map(item => (
-          <MessageComponent message={item} user={user}/>
+          <MessageComponent key={item._id} message={item} user={user}/>
         ))}
       </Stack>
       <form style={{ height: "10%" }}>
