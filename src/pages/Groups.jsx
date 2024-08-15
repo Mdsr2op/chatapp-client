@@ -1,4 +1,5 @@
 import {
+  Backdrop,
   Box,
   Button,
   Drawer,
@@ -9,7 +10,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { matteBlack, orange } from "../components/constants/color";
 import {
   KeyboardBackspace as KeyboardBackspaceIcon,
@@ -23,6 +24,10 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import GroupList from "../components/specifics/GroupList";
 import { sampleChats } from "../components/constants/sampleData";
 
+const ConfirmDeletion = lazy(() =>
+  import("../components/dialogs/ConfirmDeletion")
+);
+
 const Groups = () => {
   const navigate = useNavigate();
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -31,6 +36,7 @@ const Groups = () => {
   const [temporaryGroupName, setTemporaryGroupName] = useState("");
   const [confirmDeleteDialog, setConfirmDeleteDialog] = useState(false);
   const chatId = useSearchParams()[0].get("group");
+  const {isAddMember, setIsAddMember} = useState(true);
 
   useEffect(() => {
     setGroupName(`New Group ${chatId}`);
@@ -68,10 +74,15 @@ const Groups = () => {
 
   const openConfirmDeleteHandler = () => {
     setConfirmDeleteDialog(true);
-    console.log("Member deleted");
+    console.log("Member deletion dialog opened");
   };
 
   const closeConfirmDeleteHandler = () => {
+    setConfirmDeleteDialog(false);
+  };
+
+  const deleteGroupHandler = () => {
+    console.log("Delete Handler");
     setConfirmDeleteDialog(false);
   };
 
@@ -232,6 +243,20 @@ const Groups = () => {
         )}
       </Grid>
 
+      {
+        isAddMember && (
+          <Suspense fallback={<Backdrop open />}></Suspense>
+        )
+      }
+      {confirmDeleteDialog && (
+        <Suspense fallback={<Backdrop open />}>
+          <ConfirmDeletion
+            open={confirmDeleteDialog}
+            handleClose={closeConfirmDeleteHandler}
+            deleteHandler={deleteGroupHandler}
+          />
+        </Suspense>
+      )}
       <Drawer
         open={isMenuOpened}
         onClose={handleHamburgerClose}
