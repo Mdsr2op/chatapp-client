@@ -22,7 +22,9 @@ import {
 } from "@mui/icons-material";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import GroupList from "../components/specifics/GroupList";
-import { sampleChats } from "../components/constants/sampleData";
+import { sampleChats, sampleUsers } from "../components/constants/sampleData";
+import AddMember from "../components/dialogs/AddMember";
+import UserItem from "../components/shared/UserItem";
 
 const ConfirmDeletion = lazy(() =>
   import("../components/dialogs/ConfirmDeletion")
@@ -36,7 +38,7 @@ const Groups = () => {
   const [temporaryGroupName, setTemporaryGroupName] = useState("");
   const [confirmDeleteDialog, setConfirmDeleteDialog] = useState(false);
   const chatId = useSearchParams()[0].get("group");
-  const {isAddMember, setIsAddMember} = useState(true);
+  const [isAddMember, setIsAddMember] = useState(false);
 
   useEffect(() => {
     setGroupName(`New Group ${chatId}`);
@@ -69,7 +71,8 @@ const Groups = () => {
   };
 
   const openAddMemberHandler = () => {
-    console.log("Member Added");
+    setIsAddMember(true);
+    console.log("Member Addition dialog opened");
   };
 
   const openConfirmDeleteHandler = () => {
@@ -84,6 +87,10 @@ const Groups = () => {
   const deleteGroupHandler = () => {
     console.log("Delete Handler");
     setConfirmDeleteDialog(false);
+  };
+
+  const removeMemberHandler = (id) => {
+    console.log("Remove member", id);
   };
 
   const GroupName = (
@@ -211,43 +218,59 @@ const Groups = () => {
         }}
         sm={4}
       >
-        {IconBtns}
-
-        {groupName && (
+        {chatId ? (
           <>
-            {GroupName}
-            <Typography
-              margin={"2rem"}
-              alignSelf={"flex-start"}
-              variant="body1"
-            >
-              Members
-            </Typography>
+            {IconBtns}
 
-            <Stack
-              maxWidth={"45rem"}
-              width={"100%"}
-              boxSizing={"border-box"}
-              padding={{
-                sm: "1rem",
-                xs: "0",
-                md: "1rem 4rem",
-              }}
-              spacing={"2rem"}
-              height={"50vh"}
-              overflow={"auto"}
-              bgcolor={"red"}
-            ></Stack>
-            {ButtonGroup}
+            {groupName && (
+              <>
+                {GroupName}
+                <Typography
+                  margin={"2rem"}
+                  alignSelf={"flex-start"}
+                  variant="body1"
+                >
+                  Members
+                </Typography>
+
+                <Stack
+                  maxWidth={"45rem"}
+                  width={"100%"}
+                  boxSizing={"border-box"}
+                  padding={{
+                    sm: "1rem",
+                    xs: "0",
+                    md: "1rem 4rem",
+                  }}
+                  spacing={"2rem"}
+                  height={"50vh"}
+                  overflow={"auto"}
+                >
+                  {sampleUsers.map((user) => (
+                    <UserItem
+                      user={user}
+                      key={user._id}
+                      isAdded={true}
+                      handler={removeMemberHandler}
+                    />
+                  ))}
+                </Stack>
+                {ButtonGroup}
+              </>
+            )}
           </>
+        ) : (
+          <Stack direction={"row"} spacing={"1rem"} alignItems={"center"}>
+            <Typography variant="h4">Select Group</Typography>
+          </Stack>
         )}
       </Grid>
 
-      {
-        isAddMember && (
-          <Suspense fallback={<Backdrop open />}></Suspense>
-        )
-      }
+      {isAddMember && (
+        <Suspense fallback={<Backdrop open />}>
+          <AddMember isAddMember={isAddMember} />
+        </Suspense>
+      )}
       {confirmDeleteDialog && (
         <Suspense fallback={<Backdrop open />}>
           <ConfirmDeletion
