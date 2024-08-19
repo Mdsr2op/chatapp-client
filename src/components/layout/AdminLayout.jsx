@@ -47,7 +47,7 @@ const adminTabs = [
   },
   {
     name: "Messages",
-    path: "/admin/messages",
+    path: "/admin/message-management",
     icon: <MessageIcon />,
   },
 ];

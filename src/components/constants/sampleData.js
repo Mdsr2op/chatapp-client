@@ -274,24 +274,32 @@ export const dashboardData = {
 
   messages: [
     {
-        attachments: [],
+        attachments: [
+        ],
         content: "Wassap fellas",
         _id: "sfnsdjkfsdnfkjsbnd",
         sender: {
             _id: "user._id",
             name: "user.name",
         },
+        groupChat: false,
         chat: "chatId",
         createdAt: "2024-02-12T10:41:30.630Z",
     },
     {
-        attachments: [],
+        attachments: [
+          {
+            public_id: "asdsad4",
+            url: "https://www.w3schools.com/howto/img_avatar.png",
+          },
+        ],
         content: "Wassap fellas",
-        _id: "sfnsdjkfsdnfkjsbnd",
+        _id: "sfnsdjknfkjsbnd",
         sender: {
             _id: "user._id",
             name: "mdsr",
         },
+        groupChat: true,
         chat: "chatId",
         createdAt: "2024-02-12T10:41:30.630Z",
     },
