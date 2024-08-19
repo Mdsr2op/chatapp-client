@@ -21,16 +21,17 @@ import {
   SearchField,
 } from "../../components/styles/StyledComponents";
 import Widget from "../../components/shared/Widget";
+import DoughnutChart from "../../components/shared/charts/DoughnutChart";
+import LineChart from "../../components/shared/charts/LineChart";
 
 const Appbar = (
   <Paper
     elevation={3}
-    sx={{ padding: 2, margin: "2rem 0", borderRadius: "1rem" }}
+    sx={{ padding: "2rem", margin: "2rem 0", borderRadius: "1rem" }}
   >
-    <Stack direction={"row"} alignItems={"center"} spacing={"1rem"}>
+    <Stack direction={{xs: "column", md: "row"}} alignItems={"center"} spacing={"1rem"}>
       <AdminPanelSettingsIcon sx={{ fontSize: "3rem" }} />
       <SearchField placeholder="Search" />
-
       <CurveButton>Search</CurveButton>
       <Box sx={{ flexGrow: 1 }} />
 
@@ -71,21 +72,29 @@ const Dashboard = () => {
     <AdminLayout>
       <Container component={"main"}>
         {Appbar}
-        <Stack direction={"row"} spacing={"2rem"} flexWrap={"wrap"}>
+        <Stack
+          direction={{
+            xs: "column",
+            lg: "row",
+          }}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+          alignItems={{ xs: "flex-start", lg: "stretch" }}
+          sx={{ gap: "2rem" }}
+        >
           <Paper
             elevation={3}
             sx={{
               padding: "2rem 3.5rem",
               borderRadius: "1rem",
               width: "100%",
-              maxWidth: "45rem",
-              height: "20rem",
+              maxWidth: "40rem",
             }}
           >
             <Typography margin={"2rem 0"} variant={"h4"}>
               Recent Messages
             </Typography>
-            {"Chats"}
+            <LineChart value={[10, 20, 30, 40, 50, 60, 70]} />
           </Paper>
 
           <Paper
@@ -98,10 +107,9 @@ const Dashboard = () => {
               width: { xs: "100%", sm: "50%" },
               position: "relative",
               maxWidth: "25rem",
-              height: "20rem",
             }}
           >
-            {"Doughnut Chart"}
+            <DoughnutChart value={[30, 70]} />
             <Stack
               direction={"row"}
               spacing={"0.5em"}

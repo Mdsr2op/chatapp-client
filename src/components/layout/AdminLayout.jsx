@@ -125,7 +125,7 @@ const AdminLayout = ({ children }) => {
         xs={12}
         md={8}
         lg={9}
-        sx={{ bgcolor: "gray", padding: "2rem" }}
+        sx={{ bgcolor: "gray"}}
       >
         {children}
       </Grid>
