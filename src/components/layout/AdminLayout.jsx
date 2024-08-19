@@ -98,11 +98,10 @@ const Sidebar = ({ w = "100%" }) => {
 };
 const AdminLayout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleMobileMenuOpen = (e) => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-
 
   return (
     <Grid container minHeight="100vh">

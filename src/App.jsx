@@ -11,7 +11,7 @@ const NotFound = lazy(() => import("./components/styles/NotFound"));
 
 const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
 const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
-const MessageManangement = lazy(() => import("./pages/admin/MessageManangement"));
+const MessageManangement = lazy(() => import("./pages/admin/MessageManagement"));
 const ChatManagement = lazy(() => import("./pages/admin/ChatManagement"));
 const UserManagement = lazy(() => import("./pages/admin/UserManagement"));
 
