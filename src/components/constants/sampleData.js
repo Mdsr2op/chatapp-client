@@ -221,4 +221,80 @@ export const dashboardData = {
       groups: 25,
     },
   ],
+  chats: [
+    {
+      name: "John Doe",
+      avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+      _id: "1",
+      groupChat: false,
+      members: [
+        {
+          _id: "1",
+          name: "John Doe",
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+        {
+          _id: "2",
+          name: "Mdsr",
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+      ],
+      totalMembers: 2,
+      totalMessages: 20,
+      creator: {
+        name: "John Doe",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      },
+    },
+    {
+      name: "Mdsr",
+      avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+      _id: "2",
+      groupChat: true,
+      members: [
+        {
+          _id: "1",
+          name: "John Doe",
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+        {
+          _id: "2",
+          name: "Mdsr",
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+      ],
+      totalMembers: 2,
+      totalMessages: 20,
+      creator: {
+        name: "Mdsr",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      },
+    },
+  ],
+
+  messages: [
+    {
+        attachments: [],
+        content: "Wassap fellas",
+        _id: "sfnsdjkfsdnfkjsbnd",
+        sender: {
+            _id: "user._id",
+            name: "user.name",
+        },
+        chat: "chatId",
+        createdAt: "2024-02-12T10:41:30.630Z",
+    },
+    {
+        attachments: [],
+        content: "Wassap fellas",
+        _id: "sfnsdjkfsdnfkjsbnd",
+        sender: {
+            _id: "user._id",
+            name: "mdsr",
+        },
+        chat: "chatId",
+        createdAt: "2024-02-12T10:41:30.630Z",
+    },
+]
+
 };

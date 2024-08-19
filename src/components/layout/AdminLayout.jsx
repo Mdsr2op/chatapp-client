@@ -42,7 +42,7 @@ const adminTabs = [
   },
   {
     name: "Chats",
-    path: "/admin/chats",
+    path: "/admin/chat-management",
     icon: <GroupsIcon />,
   },
   {
