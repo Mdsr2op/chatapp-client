@@ -130,7 +130,7 @@ export const sampleChats = [
     name: "John Doe",
     _id: "19",
     groupChat: false,
-    members: ["1", "2"], 
+    members: ["1", "2"],
   },
 ];
 
@@ -202,3 +202,23 @@ export const sampleAttachments = [
   },
 ];
 
+export const dashboardData = {
+  users: [
+    {
+      name: "John Doe",
+      avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      _id: "1",
+      username: "john_doe",
+      friends: 20,
+      groups: 5,
+    },
+    {
+      name: "John Boi",
+      avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      _id: "2",
+      username: "john_boi",
+      friends: 20,
+      groups: 25,
+    },
+  ],
+};
